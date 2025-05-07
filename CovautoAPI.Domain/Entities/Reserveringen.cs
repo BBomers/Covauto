@@ -10,6 +10,9 @@ namespace CovautoAPI.Domain.Entities
     {
         public int Id { get; set; }
         public int LeenAutoID { get; set; }
+        public string Postcode { get; set; }
+        public string Straat { get; set; }
+        public string Stad { get; set; }
         public DateTime ReserveerDatum { get; set; }
         public DateTime BoekDatumVanaf { get; set; }
         public DateTime BoekDatumTot { get; set; }

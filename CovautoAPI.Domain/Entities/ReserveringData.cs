@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace CovautoAPI.Domain.Entities
 {
-    public class LeenAuto
+    public class ReserveringData
     {
         public int Id { get; set; }
-        public String Kenteken { get; set; }
+        public int ReserveringID { get; set; }
+        public string AdresFrom {  get; set; }
+        public string AdresTo { get; set; }
         public int KilometerStand { get; set; }
     }
 }
