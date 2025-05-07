@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovautoAPI.Applicatie", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovautoAPI.Domain", "CovautoAPI.Domain\CovautoAPI.Domain.csproj", "{9E8C897C-F83D-44D4-9EF9-7275DF11D889}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovautoAPI.Shared", "CovautoAPI.Shared\CovautoAPI.Shared.csproj", "{3E48F54A-4A82-4D73-B134-EF44D245D61B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9E8C897C-F83D-44D4-9EF9-7275DF11D889}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E8C897C-F83D-44D4-9EF9-7275DF11D889}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E8C897C-F83D-44D4-9EF9-7275DF11D889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E48F54A-4A82-4D73-B134-EF44D245D61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E48F54A-4A82-4D73-B134-EF44D245D61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E48F54A-4A82-4D73-B134-EF44D245D61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E48F54A-4A82-4D73-B134-EF44D245D61B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
