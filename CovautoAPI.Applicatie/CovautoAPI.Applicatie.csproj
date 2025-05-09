@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\CovautoAPI.Domain\CovautoAPI.Domain.csproj" />
     <ProjectReference Include="..\CovautoAPI.Shared\CovautoAPI.Shared.csproj" />
   </ItemGroup>
 

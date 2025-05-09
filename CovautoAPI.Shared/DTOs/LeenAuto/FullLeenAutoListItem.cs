@@ -12,6 +12,6 @@ namespace CovautoAPI.Shared.DTOs.LeenAuto
         public int Id { get; set; }
         public string Kenteken { get; set; }
         public int KilometerStand { get; set; }
-        public List<ReserveringListItem> Reserveringen { get; set; }
+        public List<ReserveringListItem>? Reserveringen { get; set; }
     }
 }

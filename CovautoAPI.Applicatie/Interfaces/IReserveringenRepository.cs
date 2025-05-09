@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CovautoAPI.Shared.DTOs.ReserveringData
+namespace CovautoAPI.Applicatie.Interfaces
 {
-    public class FullReserveringDataListItem
+    public interface IReserveringenRepository
     {
-
     }
 }
