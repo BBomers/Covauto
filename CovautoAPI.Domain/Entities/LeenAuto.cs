@@ -9,7 +9,7 @@ namespace CovautoAPI.Domain.Entities
     public class LeenAuto
     {
         public int Id { get; set; }
-        public String Kenteken { get; set; }
+        public string Kenteken { get; set; }
         public int KilometerStand { get; set; }
     }
 }

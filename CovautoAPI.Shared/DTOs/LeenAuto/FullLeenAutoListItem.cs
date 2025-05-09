@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CovautoAPI.Shared.DTOs.LeenAuto
 {
-    class FullLeenAutoListItem
+    public class FullLeenAutoListItem
     {
         public int Id { get; set; }
         public string Kenteken { get; set; }
