@@ -10,8 +10,12 @@ namespace CovautoAPI.Domain.Entities
     {
         public int Id { get; set; }
         public int ReserveringID { get; set; }
-        public string AdresFrom {  get; set; }
-        public string AdresTo { get; set; }
+        public string StartStraat { get; set; }
+        public string StartPostcode { get; set; }
+        public string StartStad { get; set; }
+        public string ToStraat { get; set; }
+        public string ToPostcode { get; set; }
+        public string ToStad { get; set; }
         public int KilometerStand { get; set; }
     }
 }

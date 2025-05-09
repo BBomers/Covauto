@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CovautoAPI.Domain.Entities
+namespace CovautoAPI.Shared.DTOs.LeenAuto
 {
-    public class LeenAuto
+    public class LeenAutoListItem
     {
         public int Id { get; set; }
         public string Kenteken { get; set; }
