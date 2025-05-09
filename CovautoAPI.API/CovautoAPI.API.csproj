@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CovautoAPI.Applicatie\CovautoAPI.Applicatie.csproj" />
     <ProjectReference Include="..\CovautoAPI.Domain\CovautoAPI.Domain.csproj" />
+    <ProjectReference Include="..\CovautoAPI.Shared\CovautoAPI.Shared.csproj" />
   </ItemGroup>
 
 </Project>
