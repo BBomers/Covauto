@@ -10,13 +10,24 @@ namespace CovautoAPI.Shared.DTOs.ReserveringData
 {
     public class ReserveringDataListItem
     {
+
         [Key]
         [JsonPropertyName("Id")]
         public int Id { get; set; }
-        [JsonPropertyName("AdresFrom")]
-        public string AdresFrom { get; set; }
-        [JsonPropertyName("AdresTo")]
-        public string AdresTo { get; set; }
+        [JsonPropertyName("ReserveringID")]
+        public int ReserveringID { get; set; }
+        [JsonPropertyName("StartStraat")]
+        public string StartStraat { get; set; }
+        [JsonPropertyName("StartPostcode")]
+        public string StartPostcode { get; set; }
+        [JsonPropertyName("StartStad")]
+        public string StartStad { get; set; }
+        [JsonPropertyName("ToStraat")]
+        public string ToStraat { get; set; }
+        [JsonPropertyName("ToPostcode")]
+        public string ToPostcode { get; set; }
+        [JsonPropertyName("ToStad")]
+        public string ToStad { get; set; }
         [JsonPropertyName("KilometerStand")]
         public int KilometerStand { get; set; }
     }

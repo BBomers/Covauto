@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CovautoAPI.Shared.DTOs.Reserveringen
 {
-    public class CrReserveringListItem
+    public class CreateReservering
     {
 
         [JsonPropertyName("LeenAutoID")]
