@@ -13,6 +13,8 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 ServiceConfiguration.RegisterServices(builder.Services, connectionString);
 
 builder.Services.AddScoped<ILeenAutoRepository, LeenAutoRepository>();
+builder.Services.AddScoped<IReserveringenRepository, ReserveringenRepository>();
+builder.Services.AddScoped<IReserveringDataRepository, ReserveringDataRepository>();
 
 //builder.Services.AddScoped<BoekenRepository>();
 

@@ -9,8 +9,8 @@ namespace CovautoAPI.Domain.Data
         public CovautoContext(DbContextOptions<CovautoContext> options) : base(options) { }
 
         public DbSet<LeenAuto> leenAutos { get; set; }
-        public DbSet<Reserveringen> Reserveringen { get; set; }
-        public DbSet<ReserveringData> ReserveringData { get; set; }
+        public DbSet<Reserveringen> reserveringen { get; set; }
+        public DbSet<ReserveringData> reserveringData { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
