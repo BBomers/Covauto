@@ -1,7 +1,6 @@
 ﻿using CovautoAPI.Shared.DTOs.LeenAuto;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -9,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace CovautoAPI.Shared.DTOs.Reserveringen
 {
-    public class ReserveringListItem
+    public class CrReserveringListItem
     {
-        [JsonPropertyName("Id")]
-        public int Id { get; set; }
+
         [JsonPropertyName("LeenAutoID")]
         public int LeenAutoID { get; set; }
         [JsonPropertyName("ReserveerDatum")]
