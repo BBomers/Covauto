@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using CovautoAPI.Applicatie.Interfafes;
+using CovautoAPI.Shared.DTOs.ReserveringData;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CovautoAPI.API.Controllers
@@ -17,27 +19,22 @@ namespace CovautoAPI.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GeefReservatieData()
         {
-            return Ok(await reserveringDataRepository.GeefAlleReservatieDataAsync());
+            return Ok(await reserveringDataRepository.GeefAlleReserveringDataenAsync());
         }
 
-        [HttpGet("search/{titel}")]
-        public async Task<IActionResult> ZoekReservatieData(string kenteken)
-        {
-            return Ok(await reserveringDataRepository.ZoekReservatieDataAsync(kenteken));
-        }
         [HttpGet("{id}")]
         public async Task<IActionResult> GeefReservatie(int id)
         {
-            FullReservatie? retVal = await reserveringDataRepository.GeefBoekAsync(id);
+            ReserveringDataListItem? retVal = await reserveringDataRepository.GeefReserveringData(id);
             return retVal != null ? Ok(retVal) : NotFound();
         }
 
         [HttpPost]
-        public async Task<IActionResult> MaakBoek(MaakReservatieData reservatieData)
+        public async Task<IActionResult> MaakBoek(CreateReserveringData reservatieData)
         {
             try
             {
-                var id = await reserveringDataRepository.CreateReservatieAsync(reservatieData);
+                var id = await reserveringDataRepository.CreateBoekAsync(reservatieData);
 
                 return Ok(id);
             }
@@ -49,11 +46,11 @@ namespace CovautoAPI.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateReservatieData(int id, UpdateReservatieData reservatieData)
+        public async Task<IActionResult> UpdateReservatieData(int id, ReserveringDataListItem reservatieData)
         {
             try
             {
-                await reserveringDataRepository.UpdateBoekAsync(id, reservatie);
+                await reserveringDataRepository.UpdateReserveringDataAsync(id, reservatieData);
                 return Ok();
             }
             catch (ValidationException ex)
@@ -71,7 +68,7 @@ namespace CovautoAPI.API.Controllers
         {
             try
             {
-                await reserveringDataRepository.DeleteReservatieAsync(id);
+                await reserveringDataRepository.DeleteReserveringDataAsync(id);
                 return Ok();
             }
             catch (Exception ex)
