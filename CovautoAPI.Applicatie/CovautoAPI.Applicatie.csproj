@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
+    <Compile Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <None Remove="Interfaces\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CovautoAPI.Domain\CovautoAPI.Domain.csproj" />
     <ProjectReference Include="..\CovautoAPI.Shared\CovautoAPI.Shared.csproj" />
   </ItemGroup>
 

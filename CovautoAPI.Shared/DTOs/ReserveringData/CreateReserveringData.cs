@@ -6,15 +6,14 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace CovautoAPI.Shared.DTOs.LeenAuto
+namespace CovautoAPI.Shared.DTOs.ReserveringData
 {
-    public class LeenAutoListItem
+    public class CreateReserveringData
     {
-        [Key]
-        [JsonPropertyName("Id")]
-        public int Id { get; set; }
-        [JsonPropertyName("Kenteken")]
-        public string Kenteken { get; set; }
+        [JsonPropertyName("AdresFrom")]
+        public string AdresFrom { get; set; }
+        [JsonPropertyName("AdresTo")]
+        public string AdresTo { get; set; }
         [JsonPropertyName("KilometerStand")]
         public int KilometerStand { get; set; }
     }

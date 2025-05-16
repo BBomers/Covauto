@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CovautoAPI.Domain.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,10 @@ namespace CovautoAPI.Domain
     {
         public static void RegisterServices(IServiceCollection services, string ConnectionSting)
         {
-            //services.AddSqlite<BoekenContext>(ConnectionSting);
+            services.AddDbContext<CovautoContext>(options =>
+                options.UseSqlite(ConnectionSting, sqliteOptions =>
+                    sqliteOptions.MigrationsAssembly("CovautoAPI.Domain")));
+
         }
     }
 }
