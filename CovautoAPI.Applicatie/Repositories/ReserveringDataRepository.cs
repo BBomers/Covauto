@@ -39,37 +39,55 @@ namespace CovautoAPI.Applicatie.Repositories
                     ToStad = b.ToStad,
                     KilometerStand = b.KilometerStand,
                 }).ToListAsync();
-            }
+        }
+        public async Task<IEnumerable<ReserveringDataListItem>> GeefAlleReserveringDatabyReserevingIdAsync(int id)
+        {
+            return await covautoContext
+                .reserveringData
+                .Where(b => b.ReserveringID == id)
+                .Select(static b => new ReserveringDataListItem
+                {
+                    Id = b.Id,
+                    ReserveringID = b.ReserveringID,
+                    StartStraat = b.StartStraat,
+                    StartPostcode = b.StartPostcode,
+                    StartStad = b.StartStad,
+                    ToStraat = b.ToStraat,
+                    ToPostcode = b.ToPostcode,
+                    ToStad = b.ToStad,
+                    KilometerStand = b.KilometerStand,
+                }).ToListAsync();
+        }
 
-            public async Task<ReserveringDataListItem?> GeefReserveringData(int id)
+        public async Task<ReserveringDataListItem?> GeefReserveringData(int id)
         {
             ReserveringData? ReserveringData = await covautoContext.reserveringData.SingleOrDefaultAsync(n => n.Id == id);
             return MapReserveringData(ReserveringData);
         }
 
-            public async Task<int> CreateBoekAsync(CreateReserveringData reserveringData)
+        public async Task<int> CreateBoekAsync(CreateReserveringData reserveringData)
+        {
+
+            var XreserveringData = new ReserveringData
             {
+                ReserveringID = reserveringData.ReserveringID,
+                StartStraat = reserveringData.StartStraat,
+                StartPostcode = reserveringData.StartPostcode,
+                StartStad = reserveringData.StartStad,
+                ToStraat = reserveringData.ToStraat,
+                ToPostcode = reserveringData.ToPostcode,
+                ToStad = reserveringData.ToStad,
+                KilometerStand = reserveringData.KilometerStand,
+            };
 
-                var XreserveringData = new ReserveringData
-                {
-                    ReserveringID = reserveringData.ReserveringID,
-                    StartStraat = reserveringData.StartStraat,
-                    StartPostcode = reserveringData.StartPostcode,
-                    StartStad = reserveringData.StartStad,
-                    ToStraat = reserveringData.ToStraat,
-                    ToPostcode = reserveringData.ToPostcode,
-                    ToStad = reserveringData.ToStad,
-                    KilometerStand = reserveringData.KilometerStand,
-                };
+            await covautoContext.reserveringData.AddAsync(XreserveringData);
 
-                await covautoContext.reserveringData.AddAsync(XreserveringData);
-
-                await covautoContext.SaveChangesAsync();
-                return XreserveringData.Id;
-            }
+            await covautoContext.SaveChangesAsync();
+            return XreserveringData.Id;
+        }
 
 
-            public async Task UpdateReserveringDataAsync(int id, ReserveringDataListItem ReserveringData)
+        public async Task UpdateReserveringDataAsync(int id, ReserveringDataListItem ReserveringData)
         {
             if (id != ReserveringData.Id)
             {

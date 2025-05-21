@@ -21,7 +21,11 @@ namespace CovautoAPI.API.Controllers
         {
             return Ok(await reserveringDataRepository.GeefAlleReserveringDataenAsync());
         }
-
+        [HttpGet("ByReserveringID/{reservereringsId}")]
+        public async Task<IActionResult> GeefReservatieDataByReserveringID(int reservereringsId)
+        {
+            return Ok(await reserveringDataRepository.GeefAlleReserveringDatabyReserevingIdAsync(reservereringsId));
+        }
         [HttpGet("{id}")]
         public async Task<IActionResult> GeefReservatie(int id)
         {
