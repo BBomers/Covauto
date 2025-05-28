@@ -16,6 +16,5 @@ namespace CovautoAPI.Domain.Entities
         public string ToStraat { get; set; }
         public string ToPostcode { get; set; }
         public string ToStad { get; set; }
-        public int KilometerStand { get; set; }
     }
 }

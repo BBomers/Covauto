@@ -17,6 +17,38 @@ namespace CovautoAPI.Domain.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
 
+            modelBuilder.Entity("CovautoAPI.Domain.Entities.Collega", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Naam")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("collega");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Naam = "Sophie Janssen"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Naam = "Tom Vermeer"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Naam = "Lotte de Vries"
+                        });
+                });
+
             modelBuilder.Entity("CovautoAPI.Domain.Entities.LeenAuto", b =>
                 {
                     b.Property<int>("Id")
@@ -61,9 +93,6 @@ namespace CovautoAPI.Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("KilometerStand")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("ReserveringID")
                         .HasColumnType("INTEGER");
 
@@ -93,13 +122,12 @@ namespace CovautoAPI.Domain.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ReserveringData");
+                    b.ToTable("reserveringData");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            KilometerStand = 10001,
                             ReserveringID = 1,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -111,7 +139,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 2,
-                            KilometerStand = 10011,
                             ReserveringID = 1,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -123,7 +150,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 3,
-                            KilometerStand = 10002,
                             ReserveringID = 2,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -135,7 +161,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 4,
-                            KilometerStand = 10012,
                             ReserveringID = 2,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -147,7 +172,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 5,
-                            KilometerStand = 10003,
                             ReserveringID = 3,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -159,7 +183,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 6,
-                            KilometerStand = 10013,
                             ReserveringID = 3,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -171,7 +194,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 7,
-                            KilometerStand = 10004,
                             ReserveringID = 4,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -183,7 +205,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 8,
-                            KilometerStand = 10014,
                             ReserveringID = 4,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -195,7 +216,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 9,
-                            KilometerStand = 10005,
                             ReserveringID = 5,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -207,7 +227,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 10,
-                            KilometerStand = 10015,
                             ReserveringID = 5,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -219,7 +238,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 11,
-                            KilometerStand = 10006,
                             ReserveringID = 6,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -231,7 +249,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 12,
-                            KilometerStand = 10016,
                             ReserveringID = 6,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -243,7 +260,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 13,
-                            KilometerStand = 10007,
                             ReserveringID = 7,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -255,7 +271,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 14,
-                            KilometerStand = 10017,
                             ReserveringID = 7,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -267,7 +282,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 15,
-                            KilometerStand = 10008,
                             ReserveringID = 8,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -279,7 +293,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 16,
-                            KilometerStand = 10018,
                             ReserveringID = 8,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -291,7 +304,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 17,
-                            KilometerStand = 10009,
                             ReserveringID = 9,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -303,7 +315,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 18,
-                            KilometerStand = 10019,
                             ReserveringID = 9,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -315,7 +326,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 19,
-                            KilometerStand = 10010,
                             ReserveringID = 10,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -327,7 +337,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 20,
-                            KilometerStand = 10020,
                             ReserveringID = 10,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -339,7 +348,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 21,
-                            KilometerStand = 10011,
                             ReserveringID = 11,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -351,7 +359,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 22,
-                            KilometerStand = 10021,
                             ReserveringID = 11,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -363,7 +370,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 23,
-                            KilometerStand = 10012,
                             ReserveringID = 12,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -375,7 +381,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 24,
-                            KilometerStand = 10022,
                             ReserveringID = 12,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -387,7 +392,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 25,
-                            KilometerStand = 10013,
                             ReserveringID = 13,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -399,7 +403,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 26,
-                            KilometerStand = 10023,
                             ReserveringID = 13,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -411,7 +414,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 27,
-                            KilometerStand = 10014,
                             ReserveringID = 14,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -423,7 +425,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 28,
-                            KilometerStand = 10024,
                             ReserveringID = 14,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -435,7 +436,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 29,
-                            KilometerStand = 10015,
                             ReserveringID = 15,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -447,7 +447,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 30,
-                            KilometerStand = 10025,
                             ReserveringID = 15,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -459,7 +458,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 31,
-                            KilometerStand = 10016,
                             ReserveringID = 16,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -471,7 +469,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 32,
-                            KilometerStand = 10026,
                             ReserveringID = 16,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -483,7 +480,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 33,
-                            KilometerStand = 10017,
                             ReserveringID = 17,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -495,7 +491,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 34,
-                            KilometerStand = 10027,
                             ReserveringID = 17,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -507,7 +502,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 35,
-                            KilometerStand = 10018,
                             ReserveringID = 18,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -519,7 +513,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 36,
-                            KilometerStand = 10028,
                             ReserveringID = 18,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -531,7 +524,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 37,
-                            KilometerStand = 10019,
                             ReserveringID = 19,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -543,7 +535,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 38,
-                            KilometerStand = 10029,
                             ReserveringID = 19,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -555,7 +546,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 39,
-                            KilometerStand = 10020,
                             ReserveringID = 20,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -567,7 +557,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 40,
-                            KilometerStand = 10030,
                             ReserveringID = 20,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -579,7 +568,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 41,
-                            KilometerStand = 10021,
                             ReserveringID = 21,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -591,7 +579,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 42,
-                            KilometerStand = 10031,
                             ReserveringID = 21,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -603,7 +590,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 43,
-                            KilometerStand = 10022,
                             ReserveringID = 22,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -615,7 +601,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 44,
-                            KilometerStand = 10032,
                             ReserveringID = 22,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -627,7 +612,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 45,
-                            KilometerStand = 10023,
                             ReserveringID = 23,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -639,7 +623,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 46,
-                            KilometerStand = 10033,
                             ReserveringID = 23,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -651,7 +634,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 47,
-                            KilometerStand = 10024,
                             ReserveringID = 24,
                             StartPostcode = "1234AB",
                             StartStad = "StadA",
@@ -663,7 +645,6 @@ namespace CovautoAPI.Domain.Migrations
                         new
                         {
                             Id = 48,
-                            KilometerStand = 10034,
                             ReserveringID = 24,
                             StartPostcode = "2233EF",
                             StartStad = "StadC",
@@ -686,6 +667,12 @@ namespace CovautoAPI.Domain.Migrations
                     b.Property<DateTime>("BoekDatumVanaf")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("CollegaID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("KilometerStand")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("LeenAutoID")
                         .HasColumnType("INTEGER");
 
@@ -694,7 +681,7 @@ namespace CovautoAPI.Domain.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Reserveringen");
+                    b.ToTable("reserveringen");
 
                     b.HasData(
                         new
@@ -702,6 +689,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 1,
                             BoekDatumTot = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -710,6 +698,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 2,
                             BoekDatumTot = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -718,6 +707,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 3,
                             BoekDatumTot = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -726,6 +716,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 4,
                             BoekDatumTot = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -734,6 +725,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 5,
                             BoekDatumTot = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -742,6 +734,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 6,
                             BoekDatumTot = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -750,6 +743,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 7,
                             BoekDatumTot = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -758,6 +752,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 8,
                             BoekDatumTot = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -766,6 +761,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 9,
                             BoekDatumTot = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -774,6 +770,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 10,
                             BoekDatumTot = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -782,6 +779,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 11,
                             BoekDatumTot = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -790,6 +788,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 12,
                             BoekDatumTot = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -798,6 +797,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 13,
                             BoekDatumTot = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -806,6 +806,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 14,
                             BoekDatumTot = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -814,6 +815,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 15,
                             BoekDatumTot = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -822,6 +824,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 16,
                             BoekDatumTot = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -830,6 +833,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 17,
                             BoekDatumTot = new DateTime(2024, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -838,6 +842,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 18,
                             BoekDatumTot = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -846,6 +851,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 19,
                             BoekDatumTot = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -854,6 +860,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 20,
                             BoekDatumTot = new DateTime(2024, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -862,6 +869,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 21,
                             BoekDatumTot = new DateTime(2024, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -870,6 +878,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 22,
                             BoekDatumTot = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -878,6 +887,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 23,
                             BoekDatumTot = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -886,6 +896,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 24,
                             BoekDatumTot = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CollegaID = 0,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });

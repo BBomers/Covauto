@@ -1,4 +1,5 @@
 
+using CovautoAPI.Applicatie.Interfaces;
 using CovautoAPI.Applicatie.Interfafes;
 using CovautoAPI.Applicatie.Repositories;
 using CovautoAPI.Domain;
@@ -15,6 +16,7 @@ ServiceConfiguration.RegisterServices(builder.Services, connectionString);
 builder.Services.AddScoped<ILeenAutoRepository, LeenAutoRepository>();
 builder.Services.AddScoped<IReserveringenRepository, ReserveringenRepository>();
 builder.Services.AddScoped<IReserveringDataRepository, ReserveringDataRepository>();
+builder.Services.AddScoped<ICollegaRepository, CollegaRepository>();
 
 //builder.Services.AddScoped<BoekenRepository>();
 
