@@ -2,6 +2,33 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world! Reserveer</h1>
+<h1>Reserveer Leenauto:</h1>
 
-Welcome to your new app.
+<form action="/" method="post">
+    <label for="leenauto">Selecteer Leenauto</label>
+    <select id="leenauto" name="leenauto">
+        @foreach (var leenauto in leenautos)
+        {
+            <option value="@leenauto.Id">@leenauto.Kenteken</option>
+        }
+    </select>
+    <br />
+
+    <label for="reserveervanaf">Reserveer Vanaf</label>
+    <input type="datetime-local" id="reserveervanaf" name="reserveervanaf" />
+    <br />
+
+    <label for="reserveertot">Reserveer Tot</label>
+    <input type="datetime-local" name="reserveertot" />
+    <br />
+
+    <label for="collega">Collega</label>
+    <select id="collega" name="collega">
+        <option value="collega1">Collega 1</option>
+        <option value="collega2">Collega 2</option>
+        <option value="collega3">Collega 3</option>
+    </select>
+    <br />
+
+    <button type="submit">Reservereer!</button>
+</form>
