@@ -74,7 +74,7 @@ namespace CovautoAPI.Applicatie.Repositories
                 KilometerStand = leenAuto.KilometerStand
 
 
-    };
+            };
         }
     }
 }
