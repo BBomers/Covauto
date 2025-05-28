@@ -28,7 +28,5 @@ namespace CovautoAPI.Shared.DTOs.ReserveringData
         public string ToPostcode { get; set; }
         [JsonPropertyName("ToStad")]
         public string ToStad { get; set; }
-        [JsonPropertyName("KilometerStand")]
-        public int KilometerStand { get; set; }
     }
 }

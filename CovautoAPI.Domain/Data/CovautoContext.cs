@@ -11,10 +11,17 @@ namespace CovautoAPI.Domain.Data
         public DbSet<LeenAuto> leenAutos { get; set; }
         public DbSet<Reserveringen> reserveringen { get; set; }
         public DbSet<ReserveringData> reserveringData { get; set; }
+        public DbSet<Collega> collega { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Collega>().HasData(
+                new Collega { Id = 1, Naam = "Sophie Janssen" },
+                new Collega { Id = 2, Naam = "Tom Vermeer" },
+                new Collega { Id = 3, Naam = "Lotte de Vries" }
+            );
 
             // LeenAutos
             modelBuilder.Entity<LeenAuto>().HasData(
@@ -52,8 +59,7 @@ namespace CovautoAPI.Domain.Data
                             StartStad = "StadA",
                             ToStraat = $"Tostraat {reserveringId}-1",
                             ToPostcode = "5678CD",
-                            ToStad = "StadB",
-                            KilometerStand = 10000 + reserveringId
+                            ToStad = "StadB"
                         },
                         new ReserveringData
                         {
@@ -64,8 +70,7 @@ namespace CovautoAPI.Domain.Data
                             StartStad = "StadC",
                             ToStraat = $"Tostraat {reserveringId}-2",
                             ToPostcode = "8899GH",
-                            ToStad = "StadD",
-                            KilometerStand = 10000 + reserveringId + 10
+                            ToStad = "StadD"
                         }
                     );
 
