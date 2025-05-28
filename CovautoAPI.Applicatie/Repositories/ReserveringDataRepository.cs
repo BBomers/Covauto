@@ -36,8 +36,7 @@ namespace CovautoAPI.Applicatie.Repositories
                     StartStad = b.StartStad,
                     ToStraat = b.ToStraat,
                     ToPostcode = b.ToPostcode,
-                    ToStad = b.ToStad,
-                    KilometerStand = b.KilometerStand,
+                    ToStad = b.ToStad
                 }).ToListAsync();
         }
         public async Task<IEnumerable<ReserveringDataListItem>> GeefAlleReserveringDatabyReserevingIdAsync(int id)
@@ -54,8 +53,7 @@ namespace CovautoAPI.Applicatie.Repositories
                     StartStad = b.StartStad,
                     ToStraat = b.ToStraat,
                     ToPostcode = b.ToPostcode,
-                    ToStad = b.ToStad,
-                    KilometerStand = b.KilometerStand,
+                    ToStad = b.ToStad
                 }).ToListAsync();
         }
 
@@ -76,8 +74,7 @@ namespace CovautoAPI.Applicatie.Repositories
                 StartStad = reserveringData.StartStad,
                 ToStraat = reserveringData.ToStraat,
                 ToPostcode = reserveringData.ToPostcode,
-                ToStad = reserveringData.ToStad,
-                KilometerStand = reserveringData.KilometerStand,
+                ToStad = reserveringData.ToStad
             };
 
             await covautoContext.reserveringData.AddAsync(XreserveringData);
@@ -124,7 +121,6 @@ namespace CovautoAPI.Applicatie.Repositories
             reserveringDataEnt.ToStraat = ReserveringData.ToStraat;
             reserveringDataEnt.ToPostcode = ReserveringData.ToPostcode;
             reserveringDataEnt.ToStad = ReserveringData.ToStad;
-            reserveringDataEnt.KilometerStand = ReserveringData.KilometerStand;
         }
 
         private static ReserveringDataListItem? MapReserveringData(ReserveringData? reserveringData)
@@ -139,8 +135,7 @@ namespace CovautoAPI.Applicatie.Repositories
                 StartStad = reserveringData.StartStad,
                 ToStraat = reserveringData.ToStraat,
                 ToPostcode = reserveringData.ToPostcode,
-                ToStad = reserveringData.ToStad,
-                KilometerStand = reserveringData.KilometerStand,
+                ToStad = reserveringData.ToStad
             };
         }
     }

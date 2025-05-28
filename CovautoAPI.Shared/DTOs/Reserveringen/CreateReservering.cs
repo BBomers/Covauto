@@ -13,6 +13,8 @@ namespace CovautoAPI.Shared.DTOs.Reserveringen
 
         [JsonPropertyName("LeenAutoID")]
         public int LeenAutoID { get; set; }
+        [JsonPropertyName("LeenAutoID")]
+        public int CollegaID { get; set; }
         [JsonPropertyName("ReserveerDatum")]
         public DateTime ReserveerDatum { get; set; } // Tijd van platsing van reservering
         [JsonPropertyName("BoekDatumVanaf")]
