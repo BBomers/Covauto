@@ -24,10 +24,11 @@
 
     <label for="collega">Collega</label>
     <select id="collega" name="collega">
-        <option value="collega1">Collega 1</option>
-        <option value="collega2">Collega 2</option>
-        <option value="collega3">Collega 3</option>
-    </select>
+        @foreach (var collega in collegas)
+        {
+            <option value="@collega.Id">@collega.Naam</option>
+        }
+    </select> 
     <br />
 
     <button type="submit">Reservereer!</button>
