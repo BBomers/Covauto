@@ -28,7 +28,7 @@ namespace Covauto.blazor.Pages
             leenautos = await HttpClient.GetFromJsonAsync<IEnumerable<LeenAutoListItem>>("/api/leenautos");
             collegas = await HttpClient.GetFromJsonAsync<IEnumerable<CollegaListItem>>("/api/collegas");
         }
-
+        
         private async Task Submit()
         {
             var result = await HttpClient.PostAsJsonAsync<CreateReservering>("/api/reserveringen", reservering);
