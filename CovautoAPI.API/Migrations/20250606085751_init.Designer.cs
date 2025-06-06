@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CovautoAPI.Domain.Migrations
+namespace CovautoAPI.API.Migrations
 {
     [DbContext(typeof(CovautoContext))]
-    [Migration("20250528093724_addonCollega")]
-    partial class addonCollega
+    [Migration("20250606085751_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -692,7 +692,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 1,
                             BoekDatumTot = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -701,7 +701,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 2,
                             BoekDatumTot = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -710,7 +710,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 3,
                             BoekDatumTot = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -719,7 +719,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 4,
                             BoekDatumTot = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -728,7 +728,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 5,
                             BoekDatumTot = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -737,7 +737,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 6,
                             BoekDatumTot = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -746,7 +746,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 7,
                             BoekDatumTot = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -755,7 +755,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 8,
                             BoekDatumTot = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 1,
                             ReserveerDatum = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -764,7 +764,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 9,
                             BoekDatumTot = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -773,7 +773,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 10,
                             BoekDatumTot = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -782,7 +782,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 11,
                             BoekDatumTot = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -791,7 +791,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 12,
                             BoekDatumTot = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -800,7 +800,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 13,
                             BoekDatumTot = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -809,7 +809,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 14,
                             BoekDatumTot = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -818,7 +818,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 15,
                             BoekDatumTot = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -827,7 +827,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 16,
                             BoekDatumTot = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 2,
                             ReserveerDatum = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -836,7 +836,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 17,
                             BoekDatumTot = new DateTime(2024, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -845,7 +845,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 18,
                             BoekDatumTot = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -854,7 +854,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 19,
                             BoekDatumTot = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -863,7 +863,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 20,
                             BoekDatumTot = new DateTime(2024, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -872,7 +872,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 21,
                             BoekDatumTot = new DateTime(2024, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -881,7 +881,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 22,
                             BoekDatumTot = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -890,7 +890,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 23,
                             BoekDatumTot = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -899,7 +899,7 @@ namespace CovautoAPI.Domain.Migrations
                             Id = 24,
                             BoekDatumTot = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             BoekDatumVanaf = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CollegaID = 0,
+                            CollegaID = 1,
                             LeenAutoID = 3,
                             ReserveerDatum = new DateTime(2024, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });

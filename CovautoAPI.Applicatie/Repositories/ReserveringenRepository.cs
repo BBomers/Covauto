@@ -25,6 +25,7 @@ namespace CovautoAPI.Applicatie.Repositories
                 {
                     Id = b.Id,
                     LeenAutoID = b.LeenAutoID,
+                    CollegaID = b.CollegaID,
                     ReserveerDatum = b.ReserveerDatum,
                     BoekDatumVanaf = b.BoekDatumVanaf,
                     BoekDatumTot = b.BoekDatumTot,
@@ -44,6 +45,7 @@ namespace CovautoAPI.Applicatie.Repositories
                 var Xreservering = new Reserveringen
                 {
                     LeenAutoID = reservering.LeenAutoID,
+                    CollegaID = reservering.CollegaID,
                     ReserveerDatum = reservering.ReserveerDatum,
                     BoekDatumVanaf = reservering.BoekDatumVanaf,
                     BoekDatumTot = reservering.BoekDatumTot
@@ -87,6 +89,7 @@ namespace CovautoAPI.Applicatie.Repositories
             {
             reserveringEnt.Id = reservering.Id;
             reserveringEnt.LeenAutoID = reservering.LeenAutoID;
+            reserveringEnt.CollegaID = reservering.CollegaID;
             reserveringEnt.ReserveerDatum = reservering.ReserveerDatum;
             reserveringEnt.BoekDatumVanaf = reservering.BoekDatumVanaf;
             reserveringEnt.BoekDatumTot = reservering.BoekDatumTot;
@@ -100,6 +103,7 @@ namespace CovautoAPI.Applicatie.Repositories
             {
                 Id = reservering.Id,
                 LeenAutoID = reservering.LeenAutoID,
+                CollegaID = reservering.CollegaID,
                 ReserveerDatum = reservering.ReserveerDatum,
                 BoekDatumVanaf = reservering.BoekDatumVanaf,
                 BoekDatumTot = reservering.BoekDatumTot,

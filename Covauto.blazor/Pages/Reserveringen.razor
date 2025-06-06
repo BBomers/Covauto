@@ -1,7 +1,33 @@
-﻿@page "/Reserveringen"
+@page "/Reserveringen"
+@using System.Net.Http.Json
+@inject HttpClient Http
+
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world! Reserveringen</h1>
 
 Welcome to your new app.
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Collega</th>
+        <th>Auto</th>
+        <th>Datum Vanaf</th>
+        <th>Datum Tot</th>
+    </tr>
+
+
+    @foreach (var Reservering in reserveringen)
+    {
+        <tr>
+            <td>@Reservering.Id</td>
+            <td>@collegaLijst.FirstOrDefault(c => c.Id == Reservering.CollegaID)?.Naam</td>
+            <td>@Reservering.LeenAutoID</td>
+            <td>@Reservering.BoekDatumVanaf</td>
+            <td>@Reservering.BoekDatumTot</td>
+        </tr>
+    }
+
+</table>
