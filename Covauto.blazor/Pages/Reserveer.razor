@@ -5,8 +5,9 @@
 <h1>Reserveer Leenauto:</h1>
 
 <form action="/" method="post">
-    <label for="leenauto">Selecteer Leenauto</label>
+    <label for="leenauto">Leenauto</label>
     <select id="leenauto" name="leenauto">
+        <option value="" disabled selected hidden>Kies een leenauto</option>
         @foreach (var leenauto in leenautos)
         {
             <option value="@leenauto.Id">@leenauto.Kenteken</option>
@@ -24,6 +25,7 @@
 
     <label for="collega">Collega</label>
     <select id="collega" name="collega">
+        <option value="" disabled selected hidden>Kies een collega</option>
         @foreach (var collega in collegas)
         {
             <option value="@collega.Id">@collega.Naam</option>
@@ -31,5 +33,5 @@
     </select> 
     <br />
 
-    <button type="submit">Reservereer!</button>
+    <button type="submit">Reservereer Leenauto</button>
 </form>
