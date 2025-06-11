@@ -1,0 +1,32 @@
+﻿@page "/Reserveringen/Add/{Id}"
+@layout MainLayout
+
+
+
+<h1>Reserveer Leenauto</h1>
+
+<form @onsubmit="HandleSubmit"> method="post">
+    <h3>Addres gegevens vanaf</h3>
+    <label for="StartStraat">Straat</label>
+    <input type="text" name="StartStraat" />
+    <label for="StartPostcode">Straat + Huisnummer</label>
+    <input type="text" name="StartPostcode" />
+    <label for="StartStad">Stad</label>
+    <input type="text" name="StartStad" />
+    <br>
+    <h3>Addres gegevens naar</h3>
+    <label for="ToStraat">Straat</label>
+    <input type="text" name="ToStraat" />
+    <label for="ToPostcode">Straat + Huisnummer</label>
+    <input type="text" name="ToPostcode" />
+    <label for="ToStad">Stad</label>
+    <input type="text" name="ToStad" />
+
+
+    <label for="Afstand">Afstand (km)</label>
+    <input type="text" name="Afstand" />
+    <br />
+
+    <button type="submit">Voeg rit toe</button>
+</form>
+

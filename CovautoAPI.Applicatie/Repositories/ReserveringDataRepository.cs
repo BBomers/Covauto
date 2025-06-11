@@ -36,7 +36,8 @@ namespace CovautoAPI.Applicatie.Repositories
                     StartStad = b.StartStad,
                     ToStraat = b.ToStraat,
                     ToPostcode = b.ToPostcode,
-                    ToStad = b.ToStad
+                    ToStad = b.ToStad,
+                    Afstand = b.Afstand
                 }).ToListAsync();
         }
         public async Task<IEnumerable<ReserveringDataListItem>> GeefAlleReserveringDatabyReserevingIdAsync(int id)
@@ -53,7 +54,8 @@ namespace CovautoAPI.Applicatie.Repositories
                     StartStad = b.StartStad,
                     ToStraat = b.ToStraat,
                     ToPostcode = b.ToPostcode,
-                    ToStad = b.ToStad
+                    ToStad = b.ToStad,
+                    Afstand = b.Afstand
                 }).ToListAsync();
         }
 
@@ -74,7 +76,8 @@ namespace CovautoAPI.Applicatie.Repositories
                 StartStad = reserveringData.StartStad,
                 ToStraat = reserveringData.ToStraat,
                 ToPostcode = reserveringData.ToPostcode,
-                ToStad = reserveringData.ToStad
+                ToStad = reserveringData.ToStad,
+                Afstand = reserveringData.Afstand
             };
 
             await covautoContext.reserveringData.AddAsync(XreserveringData);
@@ -121,6 +124,7 @@ namespace CovautoAPI.Applicatie.Repositories
             reserveringDataEnt.ToStraat = ReserveringData.ToStraat;
             reserveringDataEnt.ToPostcode = ReserveringData.ToPostcode;
             reserveringDataEnt.ToStad = ReserveringData.ToStad;
+            reserveringDataEnt.Afstand = ReserveringData.Afstand;
         }
 
         private static ReserveringDataListItem? MapReserveringData(ReserveringData? reserveringData)
@@ -135,7 +139,8 @@ namespace CovautoAPI.Applicatie.Repositories
                 StartStad = reserveringData.StartStad,
                 ToStraat = reserveringData.ToStraat,
                 ToPostcode = reserveringData.ToPostcode,
-                ToStad = reserveringData.ToStad
+                ToStad = reserveringData.ToStad,
+                Afstand = reserveringData.Afstand
             };
         }
     }

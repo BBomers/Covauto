@@ -1,34 +1,31 @@
-﻿@page "/Reserveringen"
+﻿@page "/Reserveringen/View/{Id}"
+@layout MainLayout
 @using System.Net.Http.Json
 @inject HttpClient Http
 
 
-<PageTitle>Home</PageTitle>
-
-<h1>Alle Reserveringen</h1>
-
+<h1>Reservering @Id</h1>
+<a class="btn btn-primary btn-sm" href="Reserveringen/Add">+ Rit</a>
 <table class="styled-table">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Collega</th>
-            <th>Kenteken</th>
-            <th>Datum Vanaf</th>
-            <th>Datum Tot</th>
-            <th>View</th>
+            <th>Start address</th>
+            <th>Eind address</th>
+            <th>Afstand</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
 
-        @foreach (var Reservering in reserveringen)
+        @foreach (var rit in Ritten)
         {
             <tr>
-                <td>@Reservering.Id</td>
-                <td>@collegaLijst.FirstOrDefault(c => c.Id == Reservering.CollegaID)?.Naam</td>
-                <td>@leenAutoLijst.FirstOrDefault(c => c.Id == Reservering.LeenAutoID)?.Kenteken</td>
-                <td>@Reservering.BoekDatumVanaf</td>
-                <td>@Reservering.BoekDatumTot</td>
-                <td><a class="btn btn-primary btn-sm" href="Reserveringen/View/@Reservering.Id">View</a></td>
+                <td>@rit.Id</td>
+                <td>@rit.StartStraat<br>@rit.StartPostcode @rit.StartStad</td>
+                <td>@rit.ToStraat<br>@rit.ToPostcode @rit.ToStad</td>
+                <td>@rit.Afstand</td>
+                <td><a class="btn btn-primary btn-sm" href="Reserveringen/edit/@rit.Id">Edit</a></td>
             </tr>
         }
 

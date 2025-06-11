@@ -101,3 +101,83 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.navbar {
+    background: linear-gradient(90deg, #f4af01 0%, #ffc107 100%);
+    color: #000 !important;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.navbar-toggler {
+    background-color: #ffc107ff !important;
+}
+
+.nav-scrollable {
+    background: linear-gradient(180deg, #f4af01 0%, #ffd54f 100%);
+}
+
+.nav-link {
+    color: #000 !important;
+    font-weight: 500;
+}
+
+    .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        color: #000 !important;
+        border-radius: 4px;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+        color: #000;
+    }
+
+
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+    form label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    form input,
+    form select {
+        width: 100%;
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        background-color: #fdfdfd;
+    }
+
+    form button[type="submit"] {
+        margin-top: 1.5rem;
+        padding: 0.75rem;
+        width: 100%;
+        background-color: #f5bf42;
+        color: white;
+        font-size: 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+        form button[type="submit"]:hover {
+            background-color: #f5a442;
+        }
+
+
