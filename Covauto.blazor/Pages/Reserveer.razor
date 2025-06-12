@@ -2,6 +2,40 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world! Reserveer</h1>
+<h1>Reserveer Leenauto</h1>
 
-Welcome to your new app.
+@if (!string.IsNullOrWhiteSpace(foutmelding))
+{
+    <p style="color: red; font-weight: bold">@foutmelding</p>
+}
+
+
+<form>
+    <label for="leenauto">Leenauto</label>
+    <select @bind="reservering.LeenAutoID" id="leenauto" name="leenauto">
+        @foreach (var leenauto in leenautos)
+        {
+            <option value="@leenauto.Id">@leenauto.Id (@leenauto.Kenteken)</option>
+        }
+    </select>
+    <br />
+
+    <label for="reserveervanaf">Reserveer Vanaf</label>
+    <input @bind="reservering.BoekDatumVanaf" type="datetime-local" id="reserveervanaf" name="reserveervanaf" />
+    <br />
+
+    <label for="reserveertot">Reserveer Tot</label>
+    <input @bind="reservering.BoekDatumTot" type="datetime-local" name="reserveertot" />
+    <br />
+
+    <label for="collega">Collega</label>
+    <select @bind="reservering.CollegaID" id="collega" name="collega">
+        @foreach (var collega in collegas)
+        {
+            <option value="@collega.Id">@collega.Naam</option>
+        }
+    </select> 
+    <br />
+
+    <button type="button" @onclick="Submit">Reservereer Leenauto</button>
+</form>
