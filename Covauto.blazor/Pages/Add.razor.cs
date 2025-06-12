@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CovautoAPI.Domain.Entities;
-using Microsoft.AspNetCore.Components;
-using System.Net.Http.Json;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using CovautoAPI.Domain.Entities;
 
 namespace Covauto.blazor.Pages
 {
@@ -12,8 +10,15 @@ namespace Covauto.blazor.Pages
     {
         [Parameter]
         public string Id { get; set; }
+
         [Inject]
         private HttpClient HttpClient { get; set; }
+        [Inject] 
+        private NavigationManager NavigationManager { get; set; }
+
+
+        [Inject]
+        private IJSRuntime JS { get; set; }
 
         private ElementReference startStraatRef;
         private ElementReference startPostcodeRef;
@@ -25,7 +30,6 @@ namespace Covauto.blazor.Pages
 
         private async Task HandleSubmit(EventArgs e)
         {
-            // JavaScript interop nodig om waarden op te halen
             var startStraat = await JS.InvokeAsync<string>("getElementValue", startStraatRef);
             var startPostcode = await JS.InvokeAsync<string>("getElementValue", startPostcodeRef);
             var startStad = await JS.InvokeAsync<string>("getElementValue", startStadRef);
@@ -33,12 +37,13 @@ namespace Covauto.blazor.Pages
             var toPostcode = await JS.InvokeAsync<string>("getElementValue", toPostcodeRef);
             var toStad = await JS.InvokeAsync<string>("getElementValue", toStadRef);
             var afstandString = await JS.InvokeAsync<string>("getElementValue", afstandRef);
+
             int.TryParse(afstandString, out int afstand);
 
             var rit = new ReserveringData
             {
-
-                ReserveringID = Id,
+                ReserveringID = int.Parse(Id),
+                StartStraat = startStraat,
                 StartPostcode = startPostcode,
                 StartStad = startStad,
                 ToStraat = toStraat,
@@ -47,12 +52,24 @@ namespace Covauto.blazor.Pages
                 Afstand = afstand
             };
 
-            await HttpClient.PostAsJsonAsync("api/ReserveringData", rit);
             Console.WriteLine("Rit succesvol verzonden!");
+
+            var response = await HttpClient.PostAsJsonAsync("api/ReserveringData", rit);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Bijvoorbeeld: API returned alleen het nieuwe ID als int
+                var newId = await response.Content.ReadFromJsonAsync<int>();
+
+                NavigationManager.NavigateTo($"/Reserveringen/View/{Id}?success={newId}");
+                await JS.InvokeVoidAsync("showSweetAlert", "Succes!", "De rit is aangepast.", "success");
+            }
+            else
+            {
+                Console.WriteLine("Fout bij opslaan van reservering.");
+                await JS.InvokeVoidAsync("showSweetAlert", "Error!", "Fout bij opslaan van reservering.", "error");
+
+            }
         }
-
-        [Inject]
-        private IJSRuntime JS { get; set; }
-
     }
 }

@@ -14,6 +14,7 @@ namespace CovautoAPI.Domain.Entities
         public DateTime ReserveerDatum { get; set; } // Tijd van platsing van reservering
         public DateTime BoekDatumVanaf { get; set; }
         public DateTime BoekDatumTot { get; set; }
-        public int? KilometerStand { get; set; }
+        public int? KilometerStandBegin { get; set; }
+        public int? KilometerStandEind { get; set; }
     }
 }

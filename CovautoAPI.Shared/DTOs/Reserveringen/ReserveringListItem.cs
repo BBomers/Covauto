@@ -24,8 +24,11 @@ namespace CovautoAPI.Shared.DTOs.Reserveringen
         [JsonPropertyName("BoekDatumTot")]
         public DateTime BoekDatumTot { get; set; }
 
-        [JsonPropertyName("KilometerStand")]
-        public int? KilometerStand { get; set; }
+        [JsonPropertyName("KilometerStandBegin")]
+        public int? KilometerStandBegin { get; set; }
+
+        [JsonPropertyName("KilometerStandEind")]
+        public int? KilometerStandEind { get; set; }
 
     }
 }

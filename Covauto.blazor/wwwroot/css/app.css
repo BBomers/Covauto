@@ -137,47 +137,151 @@ code {
 
 
 form {
-    background-color: #ffffff;
-    padding: 2rem;
+    background-color: #fff; /* wit zoals tabelcellen */
+    padding: 1rem 1.5rem;
     max-width: 600px;
-    margin: 2rem;
+    margin-top: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    border: 1px solid #ddd; /* lichte grijze rand zoals tabelcellen */
 }
 
     form label {
         display: block;
         font-weight: 600;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
         margin-top: 1rem;
+        color: #333;
     }
 
     form input,
     form select {
         width: 100%;
-        padding: 0.6rem;
-        border: 1px solid #ccc;
+        padding: 0.5rem;
+        border: 1px solid #ddd; /* zelfde kleur als tabel cell borders */
         border-radius: 4px;
-        font-size: 1rem;
+        font-size: 0.9rem;
         box-sizing: border-box;
-        background-color: #fdfdfd;
+        background-color: #fff; /* wit */
+        transition: border-color 0.2s ease-in-out;
     }
+
+        form input:focus,
+        form select:focus {
+            border-color: #f4af01; /* accent geel uit tabel */
+            outline: none;
+            box-shadow: 0 0 5px #f4af01;
+        }
 
     form button[type="submit"] {
         margin-top: 1.5rem;
         padding: 0.75rem;
         width: 100%;
-        background-color: #f5bf42;
-        color: white;
+        background-color: #ffd54f; /* tabel header geel */
+        color: #333;
         font-size: 1rem;
+        font-weight: 600;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.2s ease-in-out;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
         form button[type="submit"]:hover {
-            background-color: #f5a442;
+            background-color: #f4af01;
+            color: #fff;
         }
 
 
+.btn-delete {
+    color: #fff;
+    background-color: #dc3545; /* Bootstrap danger rood */
+    border-color: #bd2130;
+}
+
+    .btn-delete:hover,
+    .btn-delete:focus,
+    .btn-delete:active {
+        background-color: #bd2130;
+        border-color: #9a1e27;
+        color: #fff;
+    }
+
+.btn-add {
+    color: #fff;
+    background-color: #28a745; /* Bootstrap success groen */
+    border-color: #218838;
+}
+
+    .btn-add:hover,
+    .btn-add:focus,
+    .btn-add:active {
+        background-color: #218838;
+        border-color: #1e7e34;
+        color: #fff;
+    }
+
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 600px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+    .styled-table thead tr {
+        background-color: #ffd54f;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+    }
+
+    .styled-table tbody tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #f4af01;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+
+.boxrow {
+    display: flex;
+    gap: 1em;
+    max-width: 600px;
+    margin-bottom: 1rem;
+}
+
+.box {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    min-height: 3rem;
+    padding: 1em;
+}
+
+.fontsmall {
+    font: 0.1rem;
+    font-weight: lighter;
+}

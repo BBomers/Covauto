@@ -12,7 +12,5 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(apiUrl) 
 
 
 
-var apiUrl = "https://localhost:7119/";
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(apiUrl) });
 
 await builder.Build().RunAsync();

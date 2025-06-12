@@ -1,11 +1,101 @@
-﻿@page "/Reserveringen/View/{Id}"
+﻿@page "/Reserveringen/View/{Id:int}"
 @layout MainLayout
 @using System.Net.Http.Json
 @inject HttpClient Http
 
 
-<h1>Reservering @Id</h1>
-<a class="btn btn-primary btn-sm" href="Reserveringen/Add">+ Rit</a>
+<h1>Reservering informatie</h1>
+
+
+@if (reservering != null && leenauto != null)
+{
+    <div class="boxrow">
+        <div class="box">
+            <table>
+                <tbody>
+                    <tr>
+                        <th style="font-weight: lighter;">Kenteken</th>
+                        <th style="padding-left: 1em;  font-weight: bold;">@leenauto.Kenteken</th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Begin Km stand</th>
+                        <th style="padding-left: 1em; font-weight: bold;">
+
+                            @if (reservering.KilometerStandBegin != null)
+                            {
+                                @reservering.KilometerStandBegin
+                            }
+                            else
+                            {
+                            }
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Eind Km stand</th>
+                        <th style="padding-left: 1em; font-weight: bold;">
+                            @if (reservering.KilometerStandEind != null)
+                            {
+                                @reservering.KilometerStandEind
+                            }
+                            else
+                            {
+                                @geschatteAfstand
+                            }
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box">
+            <table>
+                <tbody>
+                    <tr>
+                        <th style="font-weight: lighter;">Collega</th>
+                        <th style="padding-left: 1em;  font-weight: bold;">@collega.Naam</th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Vanaf</th>
+                        <th style="padding-left: 1em; font-weight: bold;">@reservering.BoekDatumVanaf</th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Vanaf</th>
+                        <th style="padding-left: 1em; font-weight: bold;">@reservering.BoekDatumTot</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+
+
+
+<a class="btn btn-add btn-sm" href="Reserveringen/Add/@Id">+ Rit</a>
+<a href="#" class="btn btn-delete btn-sm" @onclick="() => VerwijderRerservering(Id)"
+@onclick:preventDefault="true">
+    - Verwijder reservering
+</a>
+
+@if (reservering != null)
+{
+    
+    @if (reservering.KilometerStandBegin == null)
+    {
+        <a href="#" class="btn btn-primary btn-sm" style="margin: 0.4em" @onclick="() => runBeginStand()"
+           @onclick:preventDefault="true">
+            ✓ Start Rit
+        </a>
+    }
+    else
+    {
+        <a href="#" class="btn btn-delete btn-sm" style="margin: 0.4em" @onclick="() => runEindeStand()"
+           @onclick:preventDefault="true">
+            ✓ Einde Rit
+        </a>
+
+    }
+}
+
 <table class="styled-table">
     <thead>
         <tr>
@@ -32,44 +122,33 @@
     </tbody>
 </table>
 
-<style>
 
-    .styled-table {
-        border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 0.9rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        min-width: 600px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+
+
+
+<script>
+    function InputStand(title, text, icon, stand) {
+        return Swal.fire({
+            title: title,
+            text: text,
+            icon: icon,
+            input: 'number',
+            inputLabel: 'Voer de kilometerstand in',
+            inputPlaceholder: 'Bijv. 123456',
+            inputAttributes: {
+                min: 0,
+                step: 1
+            },
+            inputValue: stand,
+            showCancelButton: true,
+            confirmButtonText: 'Opslaan',
+            cancelButtonText: 'Annuleren'
+        }).then(result => {
+            if (result.isConfirmed) {
+                return result.value;
+            } else {
+                return null;
+            }
+        });
     }
-
-        .styled-table thead tr {
-            background-color: #ffd54f;
-            color: #ffffff;
-            text-align: left;
-        }
-
-        .styled-table th,
-        .styled-table td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-        }
-
-        .styled-table tbody tr {
-            border-bottom: 1px solid #ddd;
-        }
-
-            .styled-table tbody tr:nth-of-type(even) {
-                background-color: #f3f3f3;
-            }
-
-            .styled-table tbody tr:last-of-type {
-                border-bottom: 2px solid #f4af01;
-            }
-
-            .styled-table tbody tr:hover {
-                background-color: #f1f1f1;
-                cursor: pointer;
-            }
-
-</style>
+</script>
