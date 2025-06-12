@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CovautoAPI.Applicatie\CovautoAPI.Applicatie.csproj" />
     <ProjectReference Include="..\CovautoAPI.Shared\CovautoAPI.Shared.csproj" />
   </ItemGroup>
 

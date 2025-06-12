@@ -15,7 +15,7 @@ namespace CovautoAPI.Domain
         {
             services.AddDbContext<CovautoContext>(options =>
                 options.UseSqlite(ConnectionSting, sqliteOptions =>
-                    sqliteOptions.MigrationsAssembly("CovautoAPI.Domain")));
+                    sqliteOptions.MigrationsAssembly("CovautoAPI.API")));
 
         }
     }

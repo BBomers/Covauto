@@ -42,6 +42,7 @@ namespace CovautoAPI.Domain.Data
                         {
                             Id = reserveringId,
                             LeenAutoID = autoId,
+                            CollegaID = 1,
                             ReserveerDatum = boekStart.AddDays(reserveringId),
                             BoekDatumVanaf = boekStart.AddDays(reserveringId + 1),
                             BoekDatumTot = boekStart.AddDays(reserveringId + 3)
