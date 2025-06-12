@@ -22,8 +22,8 @@ namespace Covauto.blazor.Pages
         private CreateReservering reservering = new CreateReservering();
         private IEnumerable<LeenAutoListItem> leenautos = [];
         private IEnumerable<CollegaListItem> collegas = [];
-
         private IEnumerable<ReserveringListItem> reserveringen = [];
+        
         private string? foutmelding = null;
 
         protected override async Task OnInitializedAsync()
