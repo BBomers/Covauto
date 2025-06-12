@@ -2,30 +2,34 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Reserveer Leenauto:</h1>
+<h1>Reserveer Leenauto</h1>
 
-<form action="/" method="post">
+@if (!string.IsNullOrWhiteSpace(foutmelding))
+{
+    <p style="color: red; font-weight: bold">@foutmelding</p>
+}
+
+
+<form>
     <label for="leenauto">Leenauto</label>
-    <select id="leenauto" name="leenauto">
-        <option value="" disabled selected hidden>Kies een leenauto</option>
+    <select @bind="reservering.LeenAutoID" id="leenauto" name="leenauto">
         @foreach (var leenauto in leenautos)
         {
-            <option value="@leenauto.Id">@leenauto.Kenteken</option>
+            <option value="@leenauto.Id">@leenauto.Id (@leenauto.Kenteken)</option>
         }
     </select>
     <br />
 
     <label for="reserveervanaf">Reserveer Vanaf</label>
-    <input type="datetime-local" id="reserveervanaf" name="reserveervanaf" />
+    <input @bind="reservering.BoekDatumVanaf" type="datetime-local" id="reserveervanaf" name="reserveervanaf" />
     <br />
 
     <label for="reserveertot">Reserveer Tot</label>
-    <input type="datetime-local" name="reserveertot" />
+    <input @bind="reservering.BoekDatumTot" type="datetime-local" name="reserveertot" />
     <br />
 
     <label for="collega">Collega</label>
-    <select id="collega" name="collega">
-        <option value="" disabled selected hidden>Kies een collega</option>
+    <select @bind="reservering.CollegaID" id="collega" name="collega">
         @foreach (var collega in collegas)
         {
             <option value="@collega.Id">@collega.Naam</option>
@@ -33,5 +37,5 @@
     </select> 
     <br />
 
-    <button type="submit">Reservereer Leenauto</button>
+    <button type="button" @onclick="Submit">Reservereer Leenauto</button>
 </form>
