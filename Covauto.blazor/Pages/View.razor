@@ -1,0 +1,154 @@
+﻿@page "/Reserveringen/View/{Id:int}"
+@layout MainLayout
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+
+<h1>Reservering informatie</h1>
+
+
+@if (reservering != null && leenauto != null)
+{
+    <div class="boxrow">
+        <div class="box">
+            <table>
+                <tbody>
+                    <tr>
+                        <th style="font-weight: lighter;">Kenteken</th>
+                        <th style="padding-left: 1em;  font-weight: bold;">@leenauto.Kenteken</th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Begin Km stand</th>
+                        <th style="padding-left: 1em; font-weight: bold;">
+
+                            @if (reservering.KilometerStandBegin != null)
+                            {
+                                @reservering.KilometerStandBegin
+                            }
+                            else
+                            {
+                            }
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Eind Km stand</th>
+                        <th style="padding-left: 1em; font-weight: bold;">
+                            @if (reservering.KilometerStandEind != null)
+                            {
+                                @reservering.KilometerStandEind
+                            }
+                            else
+                            {
+                                @geschatteAfstand
+                            }
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box">
+            <table>
+                <tbody>
+                    <tr>
+                        <th style="font-weight: lighter;">Collega</th>
+                        <th style="padding-left: 1em;  font-weight: bold;">@collega.Naam</th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Vanaf</th>
+                        <th style="padding-left: 1em; font-weight: bold;">@reservering.BoekDatumVanaf</th>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: lighter;">Vanaf</th>
+                        <th style="padding-left: 1em; font-weight: bold;">@reservering.BoekDatumTot</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+
+
+
+<a class="btn btn-add btn-sm" href="Reserveringen/Add/@Id">+ Rit</a>
+<a href="#" class="btn btn-delete btn-sm" @onclick="() => VerwijderRerservering(Id)"
+@onclick:preventDefault="true">
+    - Verwijder reservering
+</a>
+
+@if (reservering != null)
+{
+    
+    @if (reservering.KilometerStandBegin == null)
+    {
+        <a href="#" class="btn btn-primary btn-sm" style="margin: 0.4em" @onclick="() => runBeginStand()"
+           @onclick:preventDefault="true">
+            ✓ Start Rit
+        </a>
+    }
+    else
+    {
+        <a href="#" class="btn btn-delete btn-sm" style="margin: 0.4em" @onclick="() => runEindeStand()"
+           @onclick:preventDefault="true">
+            ✓ Einde Rit
+        </a>
+
+    }
+}
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Start address</th>
+            <th>Eind address</th>
+            <th>Afstand</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var rit in Ritten)
+        {
+            <tr>
+                <td>@rit.Id</td>
+                <td>@rit.StartStraat<br>@rit.StartPostcode @rit.StartStad</td>
+                <td>@rit.ToStraat<br>@rit.ToPostcode @rit.ToStad</td>
+                <td>@rit.Afstand</td>
+                <td><a class="btn btn-primary btn-sm" href="Reserveringen/edit/@rit.Id">Edit</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+
+
+<script>
+    function InputStand(title, text, icon, stand) {
+        return Swal.fire({
+            title: title,
+            text: text,
+            icon: icon,
+            input: 'number',
+            inputLabel: 'Voer de kilometerstand in',
+            inputPlaceholder: 'Bijv. 123456',
+            inputAttributes: {
+                min: 0,
+                step: 1
+            },
+            inputValue: stand,
+            showCancelButton: true,
+            confirmButtonText: 'Opslaan',
+            cancelButtonText: 'Annuleren'
+        }).then(result => {
+            if (result.isConfirmed) {
+                return result.value;
+            } else {
+                return null;
+            }
+        });
+    }
+</script>

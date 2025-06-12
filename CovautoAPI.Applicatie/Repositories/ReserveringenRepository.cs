@@ -29,7 +29,8 @@ namespace CovautoAPI.Applicatie.Repositories
                     ReserveerDatum = b.ReserveerDatum,
                     BoekDatumVanaf = b.BoekDatumVanaf,
                     BoekDatumTot = b.BoekDatumTot,
-                    KilometerStand = b.KilometerStand,
+                    KilometerStandBegin = b.KilometerStandBegin,
+                    KilometerStandEind = b.KilometerStandEind,
                 }).ToListAsync();
         }
 
@@ -93,7 +94,8 @@ namespace CovautoAPI.Applicatie.Repositories
             reserveringEnt.ReserveerDatum = reservering.ReserveerDatum;
             reserveringEnt.BoekDatumVanaf = reservering.BoekDatumVanaf;
             reserveringEnt.BoekDatumTot = reservering.BoekDatumTot;
-            reserveringEnt.KilometerStand = reservering.KilometerStand;
+            reserveringEnt.KilometerStandBegin = reservering.KilometerStandBegin;
+            reserveringEnt.KilometerStandEind = reservering.KilometerStandEind;
         }
 
         private static ReserveringListItem? MapReservering(Reserveringen? reservering)
@@ -107,7 +109,8 @@ namespace CovautoAPI.Applicatie.Repositories
                 ReserveerDatum = reservering.ReserveerDatum,
                 BoekDatumVanaf = reservering.BoekDatumVanaf,
                 BoekDatumTot = reservering.BoekDatumTot,
-                KilometerStand = reservering.KilometerStand,
+                KilometerStandBegin = reservering.KilometerStandBegin,
+                KilometerStandEind = reservering.KilometerStandEind,
             };
         }
     }

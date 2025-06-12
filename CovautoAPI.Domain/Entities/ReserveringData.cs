@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CovautoAPI.Domain.Entities
@@ -16,5 +17,6 @@ namespace CovautoAPI.Domain.Entities
         public string ToStraat { get; set; }
         public string ToPostcode { get; set; }
         public string ToStad { get; set; }
+        public int Afstand { get; set; }
     }
 }

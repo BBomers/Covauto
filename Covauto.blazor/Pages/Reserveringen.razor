@@ -1,33 +1,39 @@
-﻿@page "/Reserveringen"
+@page "/Reserveringen"
 @using System.Net.Http.Json
 @inject HttpClient Http
 
 
 <PageTitle>Home</PageTitle>
 
-<h1>Reserveringen</h1>
+<h1>Alle ritten</h1>
 
-Welcome to your new app.
-
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Collega</th>
-        <th>Auto</th>
-        <th>Datum Vanaf</th>
-        <th>Datum Tot</th>
-    </tr>
-
-
-    @foreach (var Reservering in reserveringen)
-    {
+<table class="styled-table">
+    <thead>
         <tr>
-            <td>@Reservering.Id</td>
-            <td>@collegaLijst.FirstOrDefault(c => c.Id == Reservering.CollegaID)?.Naam</td>
-            <td>@Reservering.LeenAutoID</td>
-            <td>@Reservering.BoekDatumVanaf</td>
-            <td>@Reservering.BoekDatumTot</td>
+            <th>ID</th>
+            <th>Collega</th>
+            <th>Kenteken</th>
+            <th>Datum Vanaf</th>
+            <th>Datum Tot</th>
+            <th>View</th>
         </tr>
-    }
+    </thead>
+    <tbody>
 
+        @foreach (var Reservering in reserveringen)
+        {
+            @if (Reservering.KilometerStandEind == null)
+            {
+                <tr>
+                    <td>@Reservering.Id</td>
+                    <td>@collegaLijst.FirstOrDefault(c => c.Id == Reservering.CollegaID)?.Naam</td>
+                    <td>@leenAutoLijst.FirstOrDefault(c => c.Id == Reservering.LeenAutoID)?.Kenteken</td>
+                    <td>@Reservering.BoekDatumVanaf</td>
+                    <td>@Reservering.BoekDatumTot</td>
+                    <td><a class="btn btn-primary btn-sm" href="Reserveringen/View/@Reservering.Id">View</a></td>
+                </tr>
+            }
+        }
+
+    </tbody>
 </table>

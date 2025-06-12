@@ -60,7 +60,8 @@ namespace CovautoAPI.Domain.Data
                             StartStad = "StadA",
                             ToStraat = $"Tostraat {reserveringId}-1",
                             ToPostcode = "5678CD",
-                            ToStad = "StadB"
+                            ToStad = "StadB",
+                            Afstand = 15
                         },
                         new ReserveringData
                         {
@@ -71,7 +72,8 @@ namespace CovautoAPI.Domain.Data
                             StartStad = "StadC",
                             ToStraat = $"Tostraat {reserveringId}-2",
                             ToPostcode = "8899GH",
-                            ToStad = "StadD"
+                            ToStad = "StadD",
+                            Afstand = 5
                         }
                     );
 

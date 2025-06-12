@@ -1,0 +1,35 @@
+﻿@page "/Reserveringen/Add/{Id}"
+@layout MainLayout
+
+<h1>Rit informatie</h1>
+
+<form @onsubmit="HandleSubmit" method="post">
+    <h4>Adresgegevens vanaf</h4>
+
+    <label for="StartStraat">Straat + Huisnummer</label>
+    <input type="text" name="StartStraat" id="StartStraat" @ref="startStraatRef" />
+
+    <label for="StartPostcode">Postcode</label>
+    <input type="text" name="StartPostcode" id="StartPostcode" @ref="startPostcodeRef" />
+
+    <label for="StartStad">Stad</label>
+    <input type="text" name="StartStad" id="StartStad" @ref="startStadRef" />
+
+    <h4>Adresgegevens naar</h4>
+
+    <label for="ToStraat">Straat + Huisnummer</label>
+    <input type="text" name="ToStraat" id="ToStraat" @ref="toStraatRef" />
+
+    <label for="ToPostcode">Postcode</label>
+    <input type="text" name="ToPostcode" id="ToPostcode" @ref="toPostcodeRef" />
+
+    <label for="ToStad">Stad</label>
+    <input type="text" name="ToStad" id="ToStad" @ref="toStadRef" />
+
+    <h4>Extra informatie</h4>
+    <label for="Afstand">Afstand (km)</label>
+    <input type="text" name="Afstand" id="Afstand" @ref="afstandRef" />
+
+    <br />
+    <button type="submit">Voeg rit toe</button>
+</form>

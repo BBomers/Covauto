@@ -1,0 +1,52 @@
+﻿@page "/Reserveringen/Edit/{Id:int}"
+@layout MainLayout
+
+
+<h3>Rit informatie</h3>
+
+
+<a href="#" class="btn btn-delete btn-sm" @onclick="() => VerwijderRit(Id)"
+   @onclick:preventDefault="true">
+    - Verwijder
+</a>
+
+<EditForm Model="@rit" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <h4>Adresgegevens vanaf</h4>
+
+    <div>
+        <label>Straat + Huisnummer</label>
+        <InputText @bind-Value="rit.StartStraat" />
+    </div>
+    <div>
+        <label>Postcode</label>
+        <InputText @bind-Value="rit.StartPostcode" />
+    </div>
+    <div>
+        <label>Stad</label>
+        <InputText @bind-Value="rit.StartStad" />
+    </div>
+
+    <h4>Adresgegevens naar</h4>
+    <div>
+        <label>Straat + Huisnummer</label>
+        <InputText @bind-Value="rit.ToStraat" />
+    </div>
+    <div>
+        <label>Postcode</label>
+        <InputText @bind-Value="rit.ToPostcode" />
+    </div>
+    <div>
+        <label>Stad</label>
+        <InputText @bind-Value="rit.ToStad" />
+    </div>
+
+    <h4>Extra informatie</h4>
+    <div>
+        <label>Afstand (km)</label>
+        <InputNumber @bind-Value="rit.Afstand" />
+    </div>
+
+    <button type="submit">Pas rit aan</button>
+</EditForm>
