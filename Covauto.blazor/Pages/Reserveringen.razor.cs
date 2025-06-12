@@ -23,7 +23,6 @@ namespace Covauto.blazor.Pages
         private IEnumerable<ReserveringListItem> reserveringen = [];
         private IEnumerable<CollegaListItem> collegaLijst = [];
         private IEnumerable<LeenAutoListItem> leenAutoLijst = [];
-        
         protected override async Task OnInitializedAsync()
         {
             reserveringen = await HttpClient.GetFromJsonAsync<IEnumerable<ReserveringListItem>>("api/Reservering");
