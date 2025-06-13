@@ -17,8 +17,6 @@ namespace Covauto.blazor.Pages
         [Inject]
         private HttpClient HttpClient { get; set; }
 
-        //[Inject]
-        //private NavigationManager NavigationManager { get; set; }
 
         private IEnumerable<ReserveringListItem> reserveringen = [];
         private IEnumerable<CollegaListItem> collegaLijst = [];
@@ -32,15 +30,5 @@ namespace Covauto.blazor.Pages
 
 
         }
-
-        /*private void ReserveringenAanmaken()
-        {
-            NavigationManager.NavigateTo("reserveringen/Reserveer");
-        }
-
-        private void ReserveringenBewerken(int id)
-        {
-            NavigationManager.NavigateTo($"reserveringen/bekijk/{id}");
-        }*/
     }
 }

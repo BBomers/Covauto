@@ -1,0 +1,45 @@
+﻿@page "/administratie"
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+
+<PageTitle>Home</PageTitle>
+
+<h1>Download de ritten</h1>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Maand</th>
+            <th>Jaar</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var addon in reserveringenmonth)
+        {
+                <tr>
+                    <td>@addon.Month</td>
+                    <td>@addon.Year</td>
+                    <td>
+                    <a href="#" class="btn btn-primary btn-sm" @onclick="() => download(addon.Month, addon.Year)"
+                           @onclick:preventDefault="true">
+                        download
+                        </a>
+                    </td>
+                </tr>
+        }
+
+    </tbody>
+</table>
+<script>
+    window.downloadFile = function (filename, base64) {
+        const link = document.createElement('a');
+        link.href = "data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64," + base64;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+</script>
